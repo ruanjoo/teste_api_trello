@@ -1,0 +1,22 @@
+# --- Segurança (CRÍTICO) ---
+# Ignora o arquivo que contém suas senhas e tokens
+.env
+
+# --- Ambiente Virtual ---
+# Ignora a pasta pesada com as bibliotecas instaladas
+venv/
+env/
+.venv/
+
+# --- Python e Cache ---
+# Arquivos temporários gerados pelo Python
+__pycache__/
+*.pyc
+
+# --- Pytest ---
+# Cache gerado pelos testes
+.pytest_cache/
+
+# --- IDE ---
+# Configurações locais do VS Code (opcional, mas recomendado)
+.vscode/
