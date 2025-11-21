@@ -1,17 +1,17 @@
-# 📋 Automação de Testes de API - Trello
+# Automação de Testes de API - Trello
 
 Este projeto consiste em uma suíte de testes automatizados para a API do Trello, focando na validação de criação de comentários, manipulação de cartões e integridade dos dados retornados.
 
 O projeto foi estruturado seguindo as melhores práticas de segurança para proteção de credenciais sensíveis, simulando um ambiente real de desenvolvimento seguro.
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-* **Python 3.x**
+* **Python 3.13.5**
 * **Pytest**: Framework para execução e asserção dos testes.
 * **Requests**: Biblioteca para requisições HTTP.
 * **Python-Dotenv**: Gerenciamento de variáveis de ambiente e segurança.
 
-## 🔒 Segurança e Configuração (.env)
+## Segurança e Configuração (.env)
 
 Para garantir a segurança do projeto e evitar o vazamento de credenciais (API Key e Token), este repositório utiliza o padrão de **Variáveis de Ambiente**. As chaves **não estão hardcoded** no código fonte e **não são enviadas para o GitHub**.
 
