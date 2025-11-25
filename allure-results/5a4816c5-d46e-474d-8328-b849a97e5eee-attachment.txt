@@ -1,0 +1,4 @@
+
+[SETUP] Board criado com ID: 692530e5d8d9e3fa44f1e2d8
+[STEP] Label criada: 692530e68d6185f8e041d0ee
+[TEARDOWN] Board 692530e5d8d9e3fa44f1e2d8 deletado com sucesso.

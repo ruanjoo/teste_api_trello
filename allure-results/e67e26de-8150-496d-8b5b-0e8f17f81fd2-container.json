@@ -1,0 +1,1 @@
+{"uuid": "322edc26-3c1b-4979-b113-6db3c5574d2c", "befores": [{"name": "pytestbdd_stepdef_when_eu envio uma requisição POST para o endpoint \"/labels\" com nome e cor", "status": "passed", "start": 1764046581604, "stop": 1764046581604}], "start": 1764046581604, "stop": 1764046582114}

@@ -1,0 +1,7 @@
+
+[SETUP] Construindo ambiente para Update...
+[SETUP] Sticker criado na posição (0,0). ID: 692536f31f4a7485869a7ae7
+[TEST] Movendo sticker para: {'top': 50, 'left': 80, 'zIndex': 2}
+[SUCCESS] Sticker movido e validado com sucesso.
+
+[TEARDOWN] Deletando Board 692536f1f6153ef1a5d74a32...

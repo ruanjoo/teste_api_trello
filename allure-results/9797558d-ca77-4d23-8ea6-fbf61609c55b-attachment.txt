@@ -1,0 +1,7 @@
+
+[SETUP] Construindo ambiente para Delete...
+[SETUP] Sticker criado para deleção. ID: 692536e61768596cc9e6aa58
+[TEST] Deletando sticker ID: 692536e61768596cc9e6aa58
+[SUCCESS] Sticker removido. API retornou: 400
+
+[TEARDOWN] Deletando Board 692536e59c1e2bc826d95c59...

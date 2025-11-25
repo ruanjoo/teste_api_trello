@@ -1,0 +1,1 @@
+{"uuid": "6b88c8f2-31d4-4a54-bc62-a643c4922172", "befores": [{"name": "pytestbdd_stepdef_when_eu envio uma requisição GET para o endpoint \"/labels/{id}\"", "status": "passed", "start": 1764045024757, "stop": 1764045024757}], "start": 1764045024757, "stop": 1764045025269}

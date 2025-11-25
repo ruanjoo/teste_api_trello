@@ -1,0 +1,4 @@
+
+[SETUP] Board criado com ID: 692536fe1d7618c6b680ba75
+[STEP] Label criada: 692536fe66bdcdd81852f490
+[TEARDOWN] Board 692536fe1d7618c6b680ba75 deletado com sucesso.

@@ -1,0 +1,1 @@
+{"uuid": "b6b230f0-bbd0-4bbf-9b13-dd217acf8ea2", "befores": [{"name": "pytestbdd_stepdef_then_o JSON de resposta deve conter a chave \"{chave_esperada}\" com o valor \"{valor_esperado}\"", "status": "passed", "start": 1764046596931, "stop": 1764046596931}], "start": 1764046596931, "stop": 1764046596933}

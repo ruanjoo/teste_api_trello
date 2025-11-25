@@ -1,0 +1,6 @@
+
+[SETUP] Iniciando construção do ambiente...
+[SETUP] Ambiente pronto. Sticker 'star' criado no cartão 692530d1a1a2d3e1458198b4
+[TEST] Buscando stickers do cartão: 692530d1a1a2d3e1458198b4
+
+[TEARDOWN] Deletando Board 692530d071de7bc2a2512035...

@@ -1,0 +1,1 @@
+{"uuid": "e297f5b2-102e-4b84-b151-8e9e85f18265", "befores": [{"name": "pytestbdd_stepdef_when_eu envio uma requisição PUT para alterar o texto para \"Texto Editado via BDD\"", "status": "passed", "start": 1764045058385, "stop": 1764045058385}], "start": 1764045058385, "stop": 1764045059061}

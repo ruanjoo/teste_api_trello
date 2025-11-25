@@ -1,0 +1,7 @@
+
+[SETUP] Construindo ambiente de teste...
+[SETUP] Sticker criado! ID: 692530d6af566da5196de21b no Card: 692530d5fb2ebb0338f8f479
+[TEST] Buscando sticker específico: 692530d6af566da5196de21b
+[SUCCESS] Sticker validado com sucesso.
+
+[TEARDOWN] Deletando Board 692530d4073b49481d9b2984...

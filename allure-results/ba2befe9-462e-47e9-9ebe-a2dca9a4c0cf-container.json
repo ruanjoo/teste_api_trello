@@ -1,0 +1,1 @@
+{"uuid": "4d5fa241-bb88-4d38-95cb-f3df18e7de89", "befores": [{"name": "pytestbdd_stepdef_when_eu faço um GET na rota específica \"/actions/{{id}}/{{field}}\" buscando o campo \"{campo}\"", "status": "passed", "start": 1764045036426, "stop": 1764045036426}], "start": 1764045036426, "stop": 1764045036942}

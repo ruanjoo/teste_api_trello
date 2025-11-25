@@ -18,8 +18,8 @@ def api_base_url():
 @pytest.fixture(scope="session")
 def auth_params():
     """Lê a Key e o Token do .env"""
-    key = os.getenv("TRELLO_API_KEY")
-    token = os.getenv("TRELLO_API_TOKEN")
+    key = os.getenv("TRELLO_KEY")
+    token = os.getenv("TRELLO_TOKEN")
     
     if not key or not token:
         pytest.fail("ERRO: As variáveis TRELLO_API_KEY ou TRELLO_API_TOKEN não foram encontradas no .env")
@@ -35,8 +35,15 @@ def member_id():
 
 @pytest.fixture(scope="session")
 def image_path():
-    """Verifica se a imagem existe"""
-    path = os.getenv("TEST_BACKGROUND_IMAGE_PATH", "./background_test.jpg")
+    """Verifica se a imagem existe na mesma pasta deste arquivo"""
+    # Pega o diretório onde o conftest.py está salvo
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Monta o caminho: pasta_atual + nome_da_imagem
+    default_path = os.path.join(current_dir, "background_test.jpg")
+    
+    # Se quiser, ainda pode aceitar uma variável de ambiente, mas o default agora é inteligente
+    path = os.getenv("TEST_BACKGROUND_IMAGE_PATH", default_path)
     
     if not os.path.exists(path):
         pytest.fail(f"ERRO: Arquivo de imagem não encontrado em: {path}")

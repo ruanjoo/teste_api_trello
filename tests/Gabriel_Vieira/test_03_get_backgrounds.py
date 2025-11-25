@@ -13,4 +13,4 @@ def request_get_backgrounds(api_base_url, auth_params, member_id, context):
 @then("a resposta deve ser uma lista")
 def check_response_is_list(context):
     data = context['response'].json()
-    assert isinstance(data, list)
+    assert isinstance(data, list), "A resposta da API não retornou uma lista como esperado."

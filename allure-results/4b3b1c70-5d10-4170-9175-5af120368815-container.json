@@ -1,0 +1,1 @@
+{"uuid": "d50d6540-fa58-49a6-94db-79f13f8b7a07", "children": ["b32eed4f-bb7c-4e70-bb8b-cc2051a2c936"], "befores": [{"name": "board_temporario", "status": "passed", "start": 1764046589900, "stop": 1764046590580}], "afters": [{"name": "board_temporario::0", "status": "passed", "start": 1764046593279, "stop": 1764046594202}], "start": 1764046589900, "stop": 1764046594202}

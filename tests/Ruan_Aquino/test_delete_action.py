@@ -5,7 +5,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pytest_bdd import scenario, given, when, then
 
-
 arquivo_env = Path(__file__).resolve().parent.parent.parent / ".env"
 load_dotenv(arquivo_env)
 

@@ -1,7 +1,7 @@
 import requests
 import pytest
 from pytest_bdd import scenario, given, when, then
-import shared # Importando a lista compartilhada
+import shared
 
 @scenario('trello.feature', '05. Deletar background customizado (DELETE)')
 def test_delete_background():
@@ -9,13 +9,13 @@ def test_delete_background():
 
 @given("que um background foi criado no cenario anterior")
 def check_created_id():
-    # Verifica a lista no arquivo shared
+    # Verifica se a lista compartilhada tem dados
     if not shared.background_id_container:
-        pytest.skip("Nenhum ID criado anteriormente para deletar")
+        pytest.skip("Pular teste: Nenhum ID foi criado no teste anterior (Test 04 falhou ou não rodou).")
 
 @when("eu envio uma requisicao para deletar esse background")
 def request_delete_background(api_base_url, auth_params, member_id, context):
-    # Pega o ID do arquivo shared
+    # Recupera o último ID adicionado
     bg_id = shared.background_id_container.pop()
     
     url = f"{api_base_url}/members/{member_id}/customBoardBackgrounds/{bg_id}"

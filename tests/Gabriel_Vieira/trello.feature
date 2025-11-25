@@ -9,10 +9,11 @@ Feature: Gerenciamento de Membros e Backgrounds do Trello
         Then o status code da resposta deve ser 200
         And a resposta deve conter o campo "username"
 
-    Scenario: 02. Atualizar um membro (PUT)
-        Given que possuo credenciais validas
-        When eu atualizo a Bio do membro para um valor aleatorio
-        Then o status code da resposta deve ser 200 ou 401
+    Scenario: Atualizar a bio e as iniciais do membro com sucesso
+        Given que possuo credenciais validas e recupero meu ID
+        When eu envio uma requisicao PUT para atualizar a "bio" para "Bio Automatizada" e "initials" para "BT"
+        Then o status code da resposta deve ser 200
+        And o corpo da resposta deve conter a "bio" igual a "Bio Automatizada"
 
     Scenario: 03. Buscar backgrounds customizados (GET)
         Given que possuo credenciais validas
