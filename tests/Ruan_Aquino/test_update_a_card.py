@@ -5,12 +5,8 @@ import time
 from pytest_bdd import scenario, given, when, then, parsers
 from dotenv import load_dotenv
 
-# Carrega variáveis de ambiente
 load_dotenv()
 
-# -----------------------------------------------------------
-# Fixtures (Contexto Compartilhado)
-# -----------------------------------------------------------
 @pytest.fixture
 def context():
     """
@@ -19,18 +15,11 @@ def context():
     """
     return {}
 
-# -----------------------------------------------------------
-# Ligação com o arquivo .feature
-# -----------------------------------------------------------
 @scenario('update_a_card.feature', 'Atualizar nome e descrição de um cartão com sucesso')
 
 def test_update_card():
-    """A função de teste fica vazia, pois o pytest-bdd orquestra os passos."""
+    """A função de teste fica vazia, pois o pytest-bdd manda os passos."""
     pass
-
-# -----------------------------------------------------------
-# Implementação dos Steps (Passos)
-# -----------------------------------------------------------
 
 @given("que possuo credenciais válidas e o ID de um cartão existente")
 def setup_credentials(context):

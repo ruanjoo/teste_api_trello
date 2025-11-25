@@ -1,0 +1,1 @@
+{"uuid": "90991946-9159-45ef-be32-bed39c9e3f05", "befores": [{"name": "pytestbdd_stepdef_when_eu envio uma requisição DELETE para o endpoint \"/actions/{id}\"", "status": "passed", "start": 1764013459206, "stop": 1764013459206}], "start": 1764013459206, "stop": 1764013460273}

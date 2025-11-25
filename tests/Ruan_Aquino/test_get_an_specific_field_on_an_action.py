@@ -4,29 +4,26 @@ import os
 from pytest_bdd import scenario, given, when, then, parsers
 from dotenv import load_dotenv
 
-# --- CONFIGURAÇÕES ---
+# CONFIGURAÇÕES 
 load_dotenv()
-BASE = os.getenv("TRELLO_BASE_URL")     # Ex: https://api.trello.com/1
+BASE = os.getenv("TRELLO_BASE_URL")   
 STABLE_CARD_ID = os.getenv("STABLE_CARD_ID")
 AUTH = {
     "key": os.getenv("TRELLO_KEY"),
     "token": os.getenv("TRELLO_TOKEN")
 }
 
-# --- LIGAÇÃO COM O ARQUIVO FEATURE ---
 @scenario('get_an_specific_field_on_an_action.feature', 'Validar o retorno do campo "type" via URL direta')
 def test_action_field_path():
     pass
 
-# --- FIXTURE DE CONTEXTO ---
 @pytest.fixture
 def context():
     return {}
-
-# --- FIXTURE DE SETUP/TEARDOWN ---
+# Setup
 @pytest.fixture
 def action_id_temporaria():
-    # 1. SETUP: Cria um comentário para termos um ID de Action válido
+    #Cria um comentário para termos um ID de Action válido
     url = f"{BASE}/cards/{STABLE_CARD_ID}/actions/comments"
     payload = {**AUTH, "text": "Teste de Path Parameter"}
     r = requests.post(url, params=payload)
@@ -35,10 +32,10 @@ def action_id_temporaria():
     id_action = r.json()["id"]
     yield id_action # Entrega o ID para o teste
     
-    # 2. TEARDOWN: Limpa a sujeira
+    # Limpa a sujeira
     requests.delete(f"{BASE}/actions/{id_action}", params=AUTH)
 
-# --- STEPS ---
+# TC Obter um campo específico de uma ação via Path Parameter
 
 @given("que eu tenho credenciais válidas do Trello")
 def check_creds():
@@ -48,17 +45,12 @@ def check_creds():
 def setup_action(context, action_id_temporaria):
     context["action_id"] = action_id_temporaria
 
-# --- AQUI ESTÁ A MUDANÇA PRINCIPAL ---
 @when(parsers.parse('eu faço um GET na rota específica "/actions/{{id}}/{{field}}" buscando o campo "{campo}"'))
 def get_field_via_path(context, campo):
     action_id = context["action_id"]
     
-    # IMPLEMENTAÇÃO EXATA DA DOCUMENTAÇÃO:
-    # A url é montada com o campo no final: .../actions/ID/CAMPO
     url = f"{BASE}/actions/{action_id}/{campo}"
     
-    # Note que 'params' agora tem APENAS a autenticação.
-    # Não passamos 'fields=' aqui, pois o field já está na URL.
     response = requests.get(url, params=AUTH)
     
     context["response"] = response
@@ -71,7 +63,7 @@ def check_status(context, status_code):
 def check_json_value(context, chave_esperada, valor_esperado):
     data = context["response"].json()
     
-    # Debug para você ver o retorno no console se falhar
+    # retorno no console se falhar
     print(f"Retorno da API: {data}")
     
     assert chave_esperada in data
