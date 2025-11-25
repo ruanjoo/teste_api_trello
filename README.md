@@ -1,31 +1,94 @@
-# Automação de Testes de API - Trello
+# Automação de Testes de API – Trello
 
-Este projeto consiste em uma suíte de testes automatizados para a API do Trello, focando na validação de criação de comentários, manipulação de cartões e integridade dos dados retornados.
-
-O projeto foi estruturado seguindo as melhores práticas de segurança para proteção de credenciais sensíveis, simulando um ambiente real de desenvolvimento seguro.
+Este repositório contém uma suíte de testes automatizados para a API REST do Trello, escrita em Python e estruturada com metodologia BDD. Os testes validam operações de criação, leitura, atualização e exclusão de recursos como quadros, cartões, listas e etiquetas.
 
 ## Tecnologias Utilizadas
 
-* **Python 3.13.5**
-* **Pytest**: Framework para execução e asserção dos testes.
-* **Requests**: Biblioteca para requisições HTTP.
-* **Python-Dotenv**: Gerenciamento de variáveis de ambiente e segurança.
+O projeto utiliza as seguintes ferramentas e versões:
 
-## Segurança e Configuração (.env)
+Python 3.13 – Linguagem principal  
+Pytest 9.0.1 – Framework de testes  
+Pytest-BDD 8.1.0 – Suporte a BDD com sintaxe Gherkin  
+Requests 2.32.5 – Cliente HTTP para interações com a API  
+Allure-Pytest 2.15.0 – Geração de relatórios gráficos  
+Python-dotenv 1.2.1 – Carregamento de variáveis de ambiente
 
-Para garantir a segurança do projeto e evitar o vazamento de credenciais (API Key e Token), este repositório utiliza o padrão de **Variáveis de Ambiente**. As chaves **não estão hardcoded** no código fonte e **não são enviadas para o GitHub**.
+## Pré-requisitos
 
-Para executar os testes, é necessário configurar as credenciais localmente:
+Antes de iniciar, instale em seu ambiente:
 
-### Passo a Passo de Configuração
+Python 3.13 ou superior  
+Git  
+Allure Commandline (opcional, utilizado para visualizar relatórios HTML)
 
-1.  **Localize o modelo:** Existe um arquivo chamado `.env.example` na raiz deste repositório.
-2.  **Crie o arquivo real:** Crie um arquivo chamado `.env` na mesma pasta.
-3.  **Preencha os dados:** Copie o conteúdo do modelo e preencha com suas chaves do Trello:
+## Instalação e Configuração
 
-```ini
-# Exemplo do conteúdo do arquivo .env
-TRELLO_KEY=sua_chave_api_aqui
-TRELLO_TOKEN=seu_token_aqui
-TRELLO_BASE_URL=[https://api.trello.com/1](https://api.trello.com/1)
-STABLE_CARD_ID=id_do_cartao_para_teste
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/ruanjoo/teste_api_trello.git
+cd teste_api_trello
+```
+
+## 2. Criar e ativar o ambiente virtual
+
+### Linux/Mac
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+### Windows
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+## 3. Instalar as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do projeto baseado no .env.example.
+
+```bash
+TRELLO_KEY=sua_api_key
+TRELLO_TOKEN=seu_token
+BASE_URL=https://api.trello.com/1
+```
+
+O arquivo .env não é versionado por razões de segurança.
+
+## Execução dos Testes
+### Executar toda a suíte
+```bash
+pytest -v
+```
+
+### Executar um teste específico
+```bash
+pytest -v tests/caminho/do/arquivo_test.py
+```
+
+## Relatórios com Allure
+### Gerar resultados
+```bash
+pytest --alluredir=allure-results
+```
+
+### Gerar e visualizar relatório
+```bash
+allure serve allure-results
+```
+
+## Estrutura do Projeto
+projeto segue uma divisão modular:
+
+tests/ – Contém os testes Python e arquivos .feature, organizados por autores (Gabriel Vieira, Luana Karenna, Marcos Vinicius, Ruan Aquino, Victor Fernandes).
+
+pytest.ini – Configuração global do Pytest.
+
+requirements.txt – Dependências do projeto.
