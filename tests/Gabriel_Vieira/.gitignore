@@ -1,0 +1,10 @@
+# .gitignore
+# Ambientes Virtuais
+aula_test_env/
+venv/
+.pytest_cache/
+__pycache__/
+
+# Credenciais e Logs
+.env
+*.log
